@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  
+  background: #222;
+  color: #fff;
+  font-family: 'VictorMono Nerd Font';
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+}
+
+form input,
+form button {
+  font-size: 1em;
+  margin: 5px;
+  padding: 10px 15px;
+  min-width: 300px;
+}
