@@ -1,16 +1,22 @@
-import { FormEvent, useContext, useState } from "react"
+import { FormEvent, useContext, useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
 import { AuthContext } from "../contexts/auth.context"
 
 export const SignIn = () => {
-    const auth = useContext(AuthContext)
-    const [email, setEmail] = useState("rick.grimes@twd.com")
-    const [password, setPassword] = useState("rick1")
+    const context = useContext(AuthContext)
+    const navigate = useNavigate()
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
-        await auth?.signIn({email, password})
+        await context?.signIn({email, password})
     }
+    useEffect(() => {
+        context?.token && navigate("/")
+    }, [context])
     return <>
         <h2>[SIGN IN]</h2>
+        <span>[Don't you have an account? <Link to="/signup">Sign Up</Link>]</span>
         <form onSubmit={handleSubmit}>
             <input type="email" placeholder="Email..." value={email} onChange={(e) => {setEmail(e.target.value)}} />
             <input type="password" placeholder="Password..." value={password} onChange={(e) => {setPassword(e.target.value)}} />

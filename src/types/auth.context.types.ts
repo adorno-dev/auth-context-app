@@ -1,4 +1,4 @@
-import { SignInRequest } from "./auth.service.types"
+import { SignInRequest, SignUpRequest } from "./auth.service.types"
 
 export type Token = {
     token: string,
@@ -7,5 +7,7 @@ export type Token = {
 
 export type Authentication = {
     token?: Token,
-    signIn: (signInRequest: SignInRequest) => Promise<void>
+    signIn: (signInRequest: SignInRequest) => Promise<void>,
+    signUp: (signUpRequest: SignUpRequest) => Promise<boolean>,
+    signOut: () => void
 }

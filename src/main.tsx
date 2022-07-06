@@ -8,7 +8,7 @@ import { SignIn } from './pages/signin.page'
 import { SignUp } from './pages/signup.page'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <AuthProvider>
       <BrowserRouter>
         <Routes>
@@ -18,5 +18,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </Routes>
       </BrowserRouter>
     </AuthProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 )
